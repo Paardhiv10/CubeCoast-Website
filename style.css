@@ -1,0 +1,46 @@
+body::before{
+    display:block;
+    content:'';
+    height: 70px;
+}
+.p-5{
+    padding: 4.5rem!important;
+}
+.symbol{
+    width: 40px;
+    height: 40px;
+}
+.tut-img{
+    height: 100%;
+    width: 100%;
+}
+.margin-top{
+    margin-top: 50px;
+}
+.tweak{ 
+    height: 275px;
+    width: 275px;
+    border-radius: 10px;
+}
+.custom{
+    background-color: #141E27!important;
+}
+.footc{
+    background-color: black!important;
+}
+.footer-links{
+    text-decoration: none;
+    margin-inline: 2%;
+    color: inherit;
+    font-size: x-large;
+}
+a:hover{
+    color: aquamarine;
+}
+.custom-bg{
+    background-color: azure!important;
+}
+.custom-tut-bg{
+    background-color: #4d61fc!important;
+}
+
