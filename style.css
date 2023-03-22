@@ -17,13 +17,28 @@ body::before{
 .margin-top{
     margin-top: 50px;
 }
-.tweak{ 
-    height: 275px;
-    width: 275px;
-    border-radius: 10px;
+.custom-text{
+    font-size: 275%;
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
 }
-.custom{
-    background-color: #141E27!important;
+.custom-google-text{
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+.custom-text1{
+    font-size: x-large;
+    color: rgb(91, 89, 89);
+}
+.custom-img-prop{
+    width: 380px;
+    height: 450px;
+}
+.custom-course-img{
+    height: 300px;
+}
+.custom-timer-img{
+    height: 207px;
 }
 .footc{
     background-color: black!important;
@@ -38,9 +53,12 @@ a:hover{
     color: aquamarine;
 }
 .custom-bg{
-    background-color: azure!important;
-}
-.custom-tut-bg{
-    background-color: #4d61fc!important;
+    background-color: #f0ffff!important;
 }
 
+/* .card:hover{
+    color:dodgerblue;
+} */
+.btn:hover{
+    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1)!important;
+}
