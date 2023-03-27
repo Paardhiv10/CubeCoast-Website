@@ -1,0 +1,10 @@
+body{
+    background-color: black;
+}
+.dropdown-item a.active,a:hover{
+    background-color: grey!important;
+    transition: 0.5s;
+}
+.font-size{
+    font-size: 8rem;
+}
