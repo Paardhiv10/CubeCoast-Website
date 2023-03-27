@@ -11,14 +11,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/png" href="images/favicon.png">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="icon" type="image/png" href="images/cclogo.png">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
 <!---Navigation Bar-->
     <nav class="navbar navbar-expand-lg bg-light py-3 fixed-top">
         <div class="container">
-            <img class="symbol mx-3 float-start img-fluid" src="images/favicon.png" alt="logo">
+            <img class="symbol mx-3 float-start img-fluid" src="images/cclogo.png" alt="logo">
             <a href="#" class="navbar-brand text-dark custom-google-text">CubeCoast</a>
             <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
                 <span class=""><i class="bi bi-list"></i></span>
@@ -32,29 +34,28 @@
                         <a href="instructors.html" class="nav-link text-dark">Instructors</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#questions" class="nav-link text-dark">Questions</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="contact.html" class="nav-link text-dark">Contact</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXAKzOD4fGV7ruebzUVb_tmVzVCxTayyRxr1VvWcYhhzi_Ow/viewform?usp=sf_link" class="nav-link text-dark">Contact</a>
                     </li>
                     <!-- <li class="nav-item">
-                        <a href="login.html" class="nav-link">Login</a>
+                        <button onclick="login()" class="btn btn-dark btn-sm shadow-none mx-1 mt-1">Login</button>
                     </li> -->
                 </ul>
             </div>
         </div> 
     </nav>
 <!--Section1/Home-->
-<section id="Home" class="bg-light">
+<section id="Home" class="bg-light cust-bk">
     <div class="container">
-        <div class="row align-items-center justify-content-center">
+        <br>
+        <br>
+        <div class="row d-flex align-items-center justify-content-center">
             <div class="col-md mx-5 mt-5">
-                <h1 class="custom-text mx-5">Join India's smartest <br> <span class="text-primary">cubing</span>  community</h1>
-                <p class="custom-text1 mt-3 mx-5">Interact and network with fellow cubers, compete in events and win exciting prizes. All for free! What are you waiting for?</p>
-                <button onclick="button()" class="btn btn-primary btn-lg mb-5 mt-3 mx-5 shadow-none">Join the Community</button>
+                <h1 class="custom-text mx-3">Speecubing Mentorship</h1>
+                <p class="custom-text1 mt-3 mx-3">Get personalized coaching from the experts! Take up the speedcubing mentorship program from expert speedcubers and get 1:1 mentorship to solve and compete faster.</p>
+                <button onclick="buttont()" class="btn btn-primary btn-lg mb-5 mt-3 mx-3 shadow-none"><i class="bi bi-chevron-right"></i>Book Free Trail Class</button>
             </div>
             <div class="col-md mx-5 mb-5 mt-5">
-                <img class="img-fluid custom-img-prop" src="images/community.png" alt="">
+                <img class="img-fluid" src="images/team.png" alt="">
             </div>  
         </div>
     </div>
@@ -62,33 +63,32 @@
     <br>
 </section>
 
-<!--Class Booking-->
-<section id="services" class="p-2">
+<!--Community-->
+<section id="services" class="cust-top">
     <div class="container">
-        <div class="d-flex justify-content-center my-lg-5">
-            <h2 class="fw-bold custom-google-text">Here's what we offer!</h2>
+        <div class="d-flex justify-content-center mt-lg-4">
+            <h1 class="fw-bold custom-google-text">Here's what we offer!</h1>
         </div>
-        <div class="row d-flex align-items-center justify-content-between">
-            <div class="col-md">
-                <img src="images/team.png" class="img-fluid mt-1 mb-5" alt="">
-            </div>
-            <div class="col-md p-3">
-                <h3 class="custom-google-text">Speedcubing Mentorship</h3>
-                <p class="lead">
-                    Drop your times and fasten your speed!
-                </p>
-                <p>
-                    Get personalized coaching from the experts! Take up the speedcubing mentorship program from expert speedcubers and get 1:1 mentorship to solve and compete faster.
-                </p>
-                <a href="https://calendly.com/cubecoast/free-trail-class?month=2022-07" class="btn btn-dark mt-3 shadow-none"><i class="bi bi-chevron-right"></i>Book free trail class</a>
-            </div>
+        <div class="container" data-aos="fade-down">
+            <div class="row d-flex align-items-center justify-content-between">
+                <div class="col-md text-center my-5">
+                    <img src="images/undraw_community_re_cyrm.svg" class="img-fluid mt-1 mb-5 com-img" alt="">
+                </div>
+                <div class="col-md p-3">
+                    <h3 class="custom-google-text">Seedcubing Community</h3>
+                    <p class="lead">Join India's smartest cubing community</p>
+                    <p>Interact and network with fellow cubers, compete in events and win exciting prizes. All for free! What are you waiting for?</p>
+                    <a href="https://chat.whatsapp.com/HhlgViS965vDfG72wL53mZ" class="btn btn-dark mt-3 shadow-none"><i class="bi bi-chevron-right"></i>Join community</a>
+                </div>
+            </div> 
         </div>
+                
     </div>
 </section>
 
 <!-----Courses Section-->
-    <section id="services" class="text-dark custom-bg p-2">
-        <div class="container my-5">
+    <section id="services" class="mt-5 text-dark custom-bg p-2 mx-4 border rounded-3">
+        <div class="container my-5" data-aos="fade-right">
             <div class="row d-flex align-items-center justify-content-between">
                 <div class="col-md p-3">
                     <h3 class="custom-google-text">Events Offered</h3>
@@ -100,7 +100,7 @@
                     </p>
                     <a href="courses.html" class="btn btn-dark text-light mt-3 shadow-none"><i class="bi bi-chevron-right"></i>Explore</a>
                 </div>
-                <div class="col-md">
+                <div class="col-md text-center">
                     <img src="images/course.png" class="img-fluid custom-course-img mt-3" alt="Services">
                 </div>
             </div>
@@ -108,13 +108,13 @@
     </section>
 
 <!-- Tutorial Section  -->
-    <section id="servies" class="p-2 bg-light custom-tut-bg text-dark">
-        <div class="container my-5">
+    <section id="tutorials" class="mt-5 p-2 bg-light text-dark mx-4 border rounded-3">
+        <div class="container my-5" data-aos="fade-down">
             <div class="row d-flex align-items-center justify-content-between">
                 <div class="col-md">
-                    <img src="images/youtube.svg" class="image-fluid tut-img" alt="">
+                    <img src="images/youtube.svg" class="img-fluid" alt="">
                 </div>
-                <div class="col-md margin-top">
+                <div class="col-md" >
                     <h3 class="custom-google-text">Interactive Cubing Tutorials</h3>
                     <p class="lead">
                         Learn wca and non-wca events
@@ -129,23 +129,25 @@
 <!-- <Testimonials> -->
     <section id="reviews" class="text-dark">
         <div class="container">
-            <div class="container text-center mt-5">
-                <h2 class="custom-google-text">That's what they said ❤️</h2>
-                <p class="lead">Here's what are students would like to share about the classes.</p>
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md">
-                        <div class="card text-dark border-dark mb-3" style="max-width: 100%;">
+            <div class="mt-5">
+                <h2 class="custom-google-text text-center">That's what they said ❤️</h2>
+                <p class="lead text-center">Here's what our students would like to share about the classes.</p>
+            </div>
+            <div class="container text-center mt-5" data-aos="fade-down">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card text-dark border-dark mb-3">
                             <div class="card-body">
-                              <img src="images/guru_review.jpeg" class="img-fluid h-50 w-75" alt="">
-                              <p class="card-text mt-2"> <a href=""><i class="bi bi-quote h2"></i></a> ❝ The coaches explained each step clearly and in a way that was easy to understand. The class was well-paced and the coach was able to provide helpful tips and tricks to improve my solving times. ❞</p>
+                              <p class="card-text lead mt-2 text-dark"> <a href=""><i class="bi bi-quote h2"></i></a> ❝ The coaches explained each step clearly and in a way that was easy to understand. The class was well-paced and the coach was able to provide helpful tricks to improve my solving times. ❞</p>
+                              <img src="images/guru_review.jpeg" class="rounded img-fluid rev-img-cust" alt="">
                             </div>
                           </div>
                     </div>
-                    <div class="col-md">
-                        <div class="card text-dark border-dark mb-3" style="max-width: 100%;">
+                    <div class="col-md-6">
+                        <div class="card text-dark border-dark mb-3">
                             <div class="card-body">
-                                <img src="images/samarth_review.jpeg" class="img-fluid h-50 w-75" alt="">
-                                <p class="card-text mt-2">❝ Rubik's cube is a very interesting thing. My son solves it very easily because he loves Rubik's cube. In my view, Rubik's cube helps child concentrate and improve their thinking power. ❞ </p>
+                                <p class="card-text lead mt-2 text-dark">❝ Rubik's cube is a very interesting thing. My son solves it very easily because he loves Rubik's cube. In my view, Rubik's cube helps child concentrate and improve their thinking power. ❞ </p>
+                                <img src="images/samarth_review.jpeg" class="rounded img-fluid rev-img-cust" alt="">
                             </div>
                         </div>
                     </div>
@@ -156,14 +158,14 @@
     </section>
 
 <!-- Our Products-->
-    <section class="p-5">
+    <section class="mt-5 mx-3">
         <div class="container">
+            <div class="mb-5">
+                <h2 class="custom-google-text text-center">Our Products <i class="bi bi-box-arrow-up-right"></i></h2>
+            </div>
             <div class="row d-flex align-items-center justify-content-between">
-                <div class="mb-5">
-                    <h2 class="custom-google-text text-center">Our Products <i class="bi bi-box-arrow-up-right"></i></h2>
-                </div>
-                <div class="col-md">
-                    <div class="card border-info mb-3" style="max-width: 22rem;">
+                <div class="col-md" >
+                    <div class="card border-info mb-3" data-aos="zoom-out">
                         <div class="card-header">Coming Soon..</div>
                         <div class="card-body text-center">
                           <h5 class="card-title text-center mb-4 custom-google-text">Cube Timer</h5>
@@ -173,7 +175,7 @@
                       </div> 
                 </div>
                 <div class="col-md">
-                    <div class="card border-info mb-3" style="max-width: 22rem;">
+                    <div class="card border-info mb-3" data-aos="zoom-out">
                         <div class="card-header">Coming Soon..</div>
                         <div class="card-body text-center">
                           <h5 class="card-title text-center mb-4 custom-google-text">Cubing Hardware</h5>
@@ -183,7 +185,7 @@
                       </div>
                 </div> 
                 <div class="col-md">
-                    <div class="card border-info mb-3" style="max-width: 22rem;">
+                    <div class="card border-info mb-3" data-aos="zoom-out">
                         <div class="card-header">Coming Soon..</div>
                         <div class="card-body text-center">
                           <h5 class="card-title text-center mb-5 custom-google-text">Cubing Games</h5>
@@ -211,7 +213,7 @@
 
     </section>
 <!---Questions-->
-<section id="questions" class="p-5">
+<section id="questions" class="my-5">
     <div class="container">
         <h2 class="text-center mb-4 custom-google-text">Frequently Asked Questions</h2>
         <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -252,18 +254,25 @@
 <!--Footer Section-->
     <footer class="p-4 bg-dark text-light text-center position-relative footc">
         <div class="container">
-            <div class="my-4">
-                <a href="" class="footer-links">About Us</a>
-                <!-- <a href="" class="footer-links">Teach at CubeCoast</a> -->
-                <a onclick="careers()" class="footer-links">Join our Team</a>
-                <a href="contact.html" class="footer-links">Contact Us</a>
+            <div class="row d-flex-align-itmes-center justify-content-center">
+                <div class="col-md">
+                    <div class="my-2">
+                        <!-- <a href="#" class="footer-links">About Us</a> -->
+                        <!-- <a href="" class="footer-links">Teach at CubeCoast</a> -->
+                        <a onclick="careers()" class="footer-links">Join our Team</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdXAKzOD4fGV7ruebzUVb_tmVzVCxTayyRxr1VvWcYhhzi_Ow/viewform?usp=sf_link" class="footer-links">Contact Us</a>
+                    </div>
+                </div>
+                <div class="col-md">
+                    <div class="my-2">
+                        <a onclick="insta()"><i class="bi bi-instagram h2 mx-3"></i></a>
+                        <!-- <a><i class="bi bi-twitter h2 mx-3"></i></a> -->
+                        <a onclick="mail()"><i class="bi bi-envelope h2 mx-3"></i></a>
+                        <!-- <a><i class="bi bi-linkedin h3 mx-3"></i></a> -->
+                    </div>
+                </div>
             </div>
-            <div class="my-4">
-                <a onclick="insta()"><i class="bi bi-instagram h2 mx-3"></i></a>
-                <a><i class="bi bi-twitter h2 mx-3"></i></a>
-                <a onclick="mail()"><i class="bi bi-envelope h2 mx-3 out"></i></a>
-                <a><i class="bi bi-linkedin h2 mx-3"></i></a>
-            </div>
+            <hr>
             <p class="mt-3">&copy; Copyright 2022 CubeCoast</p>
         </div>
     </footer>

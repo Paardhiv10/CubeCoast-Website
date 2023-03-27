@@ -39,3 +39,4 @@ function ValidatePhoneNumber(inputText){
       return false;
    }
 }
+

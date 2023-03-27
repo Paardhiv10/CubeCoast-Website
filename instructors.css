@@ -1,0 +1,17 @@
+body::before{
+    display:block;
+    content:'';
+    height: 70px;
+}
+.symbol{
+    width: 40px;
+    height: 40px;
+}
+.custom-google-text{
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+.cust-bk{
+    background-image: url("gggrain.svg");
+    background-size: cover;
+}

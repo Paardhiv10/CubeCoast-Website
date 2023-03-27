@@ -3,16 +3,12 @@ body::before{
     content:'';
     height: 70px;
 }
-.p-5{
+/* .p-5{
     padding: 4.5rem!important;
-}
+} */
 .symbol{
     width: 40px;
     height: 40px;
-}
-.tut-img{
-    height: 100%;
-    width: 100%;
 }
 .margin-top{
     margin-top: 50px;
@@ -26,19 +22,48 @@ body::before{
     font-family: 'Marcellus', serif;
     font-weight: bold;
 }
+.nav-link:hover{
+    text-decoration:underline;   
+}
+.cust-bk{
+    background-image: url("gggrain.svg");
+    background-size: cover;
+}
 .custom-text1{
     font-size: x-large;
     color: rgb(91, 89, 89);
 }
-.custom-img-prop{
-    width: 380px;
-    height: 450px;
+.cust-top{
+    padding-top: 5%;
+}
+.com-img{
+    height: 50%;
+    width: 50%;
 }
 .custom-course-img{
-    height: 300px;
+    height: 80%;
+    width: 80%;
+}
+#tutorials{
+    background-color:rgb(251, 242, 231)!important;
+}
+.rev-img-cust{
+    height: 25%;
+    width: 25%;
+    border-radius: 50%!important;
 }
 .custom-timer-img{
     height: 207px;
+}
+.custom-bg{
+    background-color: #f0ffff!important;
+}
+.btn:hover{
+    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1)!important;
+}
+a:hover{
+    color: aquamarine;
+    cursor: pointer;
 }
 .footc{
     background-color: black!important;
@@ -47,18 +72,5 @@ body::before{
     text-decoration: none;
     margin-inline: 2%;
     color: inherit;
-    font-size: x-large;
-}
-a:hover{
-    color: aquamarine;
-}
-.custom-bg{
-    background-color: #f0ffff!important;
-}
-
-/* .card:hover{
-    color:dodgerblue;
-} */
-.btn:hover{
-    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1)!important;
+    font-size:larger;
 }
