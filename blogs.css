@@ -1,0 +1,74 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 70px;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.symbol {
+    width: 40px;
+    height: 40px;
+}
+
+.custom-google-text {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.btn:hover {
+    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1)!important;
+}
+
+.blog-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.blog-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.blog-content h2 {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.blog-content p {
+    margin-bottom: 1.5rem;
+}
+
+.lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+footer {
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .blog-content h1 {
+        font-size: 2rem;
+    }
+
+    .blog-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+}
+

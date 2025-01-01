@@ -1,3 +1,8 @@
+body::before{
+    display:block;
+    content:'';
+    height: 70px;
+}
 .custom-google-text{
     font-family: 'Marcellus', serif;
     font-weight: bold;
@@ -12,8 +17,10 @@
     width: 40px;
     height: 40px;
 }
-body::before{
-    display:block;
-    content:'';
-    height: 70px;
+.img-custom{
+    height: 70%;
+    width: 70%;
+}
+.footc{
+    background-color: black!important;
 }

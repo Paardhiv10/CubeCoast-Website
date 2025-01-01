@@ -3,9 +3,6 @@ body::before{
     content:'';
     height: 70px;
 }
-/* .p-5{
-    padding: 4.5rem!important;
-} */
 .symbol{
     width: 40px;
     height: 40px;
@@ -26,7 +23,7 @@ body::before{
     text-decoration:underline;   
 }
 .cust-bk{
-    background-image: url("gggrain.svg");
+    background-image: url("../images/gggrain.svg");
     background-size: cover;
 }
 .custom-text1{
@@ -47,11 +44,13 @@ body::before{
 #tutorials{
     background-color:rgb(251, 242, 231)!important;
 }
-.rev-img-cust{
-    height: 25%;
-    width: 25%;
-    border-radius: 50%!important;
+.rev-img-cust {
+    height: 75%;
+    width: 75%;
+    object-fit: cover;
+    overflow: hidden;
 }
+
 .custom-timer-img{
     height: 207px;
 }
@@ -73,4 +72,189 @@ a:hover{
     margin-inline: 2%;
     color: inherit;
     font-size:larger;
+}
+.blog-card:hover{
+    border: 2px solid #4c4c4c!important;
+}
+.blog-redirection-custom{
+    text-decoration: none!important;
+}
+.response{
+    width: 86%;
+    display: none;
+}
+
+/* New styles for stats section */
+.stats {
+    background-color: #007bff;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+/* Heading styling */
+.stats h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Container for the stat items */
+.stat-container {
+    display: flex;
+    justify-content: center;  /* Align cards in the center */
+    gap: 2rem;  /* Add space between the cards */
+    padding: 0 2rem;  /* Add padding to the left and right ends */
+    flex-wrap: wrap;  /* Allow wrapping of items for smaller screens */
+}
+
+/* Each stat item card */
+.stat-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;  /* Set a fixed width for the cards */
+    text-align: center;
+}
+
+/* Number styling inside the cards */
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+    color: #007bff;  /* Set a color for the number */
+}
+
+/* Label styling inside the cards */
+.stat-label {
+    font-size: 1.1rem;
+    color: #333;  /* A darker color for the labels */
+    margin-top: 10px;
+}
+
+.image-container {
+    height: calc(100vh - 56px); /* Adjust 56px if your navbar height is different */
+    overflow: hidden;
+}
+
+.full-height-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .image-container {
+        height: 50vh;
+    }
+}
+
+/* New styles for scrolling testimonials */
+.testimonial-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    padding: 20px 0;
+}
+
+.testimonial-container::-webkit-scrollbar {
+    display: none; /* WebKit */
+}
+
+.testimonial {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 1.5rem; /* Reduced padding */
+    margin-right: 1rem;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid transparent; /* Transparent border for color change */
+    height: 370px; /* Fixed height for all testimonial cards */
+    overflow: hidden; /* Hide overflow content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures content is spaced out within the fixed height */
+}
+
+/* Hover effect with slight upward movement */
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+/* Colorful outlines based on Rubik's Cube colors */
+.testimonial:nth-child(1) {
+    border-color: red; /* Red outline */
+}
+
+.testimonial:nth-child(2) {
+    border-color: blue; /* Blue outline */
+}
+
+.testimonial:nth-child(3) {
+    border-color: green; /* Green outline */
+}
+
+.testimonial:nth-child(4) {
+    border-color: yellow; /* Yellow outline */
+}
+
+.testimonial:nth-child(5) {
+    border-color: orange; /* Orange outline */
+}
+
+.testimonial:nth-child(6) {
+    border-color: black; /* Black outline */
+}
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem; /* Reduced font size for longer text to fit */
+    line-height: 1.4; /* Improved line height for readability */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis if text overflows */
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 60px; /* Increased size */
+    height: 60px; /* Increased size */
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .custom-text {
+        font-size: 200%;
+    }
+    
+    .custom-text1 {
+        font-size: large;
+    }
+    
+    .com-img, .custom-course-img {
+        height: auto;
+        width: 100%;
+    }
+    
+    .testimonial {
+        width: 90%;
+    }
 }
