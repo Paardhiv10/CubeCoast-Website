@@ -1,0 +1,511 @@
+/* Heights (adjust these if your exact banner/nav heights differ) */
+:root{
+    --nav-h: 72px;     /* your navbar height */
+    --banner-h: 48px;  /* your blue banner height on desktop */
+}
+
+/* 1) Remove any global "body spacer" hack */
+body::before{
+    content: none !important;
+    display: none !important;
+}
+
+/* 2) Navbar is fixed and sits flush to the very top by default */
+.navbar.fixed-top{
+    position: fixed;
+    top: 0;           /* no global push-down */
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* 3) Content offset so nothing slides under the fixed navbar on all pages */
+main,
+.main,
+.page,
+.content,
+.page-content{
+    padding-top: var(--nav-h, 72px);
+}
+
+/* 4) Desktop: ONLY if a banner exists above the navbar, offset the navbar
+        by the banner height and increase the content offset accordingly */
+@media (min-width: 769px){
+    /* If markup is: .blue-banner + .navbar + main ... */
+    .blue-banner + .navbar.fixed-top{
+    top: var(--banner-h, 48px);
+    }
+    .blue-banner + .navbar.fixed-top ~ main,
+    .blue-banner + .navbar.fixed-top ~ .main,
+    .blue-banner + .navbar.fixed-top ~ .page,
+    .blue-banner + .navbar.fixed-top ~ .content,
+    .blue-banner + .navbar.fixed-top ~ .page-content{
+    padding-top: calc(var(--nav-h, 72px) + var(--banner-h, 48px));
+    }
+}
+
+/* 5) Mobile: hide the banner and keep the navbar at the very top with
+        a consistent content offset equal to the navbar height only */
+@media (max-width: 768px){
+    .blue-banner{ display: none; }
+    /* Ensure no offset on mobile even if the banner exists in markup */
+    .blue-banner + .navbar.fixed-top{ top: 0; }
+    .blue-banner + .navbar.fixed-top ~ main,
+    .blue-banner + .navbar.fixed-top ~ .main,
+    .blue-banner + .navbar.fixed-top ~ .page,
+    .blue-banner + .navbar.fixed-top ~ .content,
+    .blue-banner + .navbar.fixed-top ~ .page-content{
+    padding-top: var(--nav-h, 72px);
+    }
+    /* Optional: your existing banner text tweaks can remain */
+    .banner-text{ font-size: 14px; }
+}
+
+/* 6) Clean up any stray top margins that may create phantom gaps */
+header.navbar,
+.navbar{
+    margin-top: 0;
+}
+
+/* Blue Banner Styles */
+.blue-banner {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    padding: 12px 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1050;
+}
+
+.blue-banner:hover {
+    background: linear-gradient(135deg, #000000, #333333);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.banner-text {
+    white-space: nowrap;
+    animation: scroll-right-to-left 40s linear infinite;
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 400%;
+}
+
+.banner-text span {
+    display: inline-block;
+    padding-right: 100px;
+    flex-shrink: 0;
+}
+
+@keyframes scroll-right-to-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.blue-banner:hover .banner-text {
+    animation-play-state: paused;
+}
+
+/* Product Images Hover Effects */
+.product-image {
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.product-image:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+}
+
+.product-image {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.product-image:hover {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+@media (max-width: 768px) {
+    .product-image {
+        margin-bottom: 2rem;
+        width: 100%;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    
+    .col-md {
+        margin-bottom: 2rem;
+    }
+}
+
+.symbol{
+    width: 40px;
+    height: 40px;
+}
+.margin-top{
+    margin-top: 50px;
+}
+.custom-text{
+    font-size: 275%;
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+.custom-google-text{
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+.nav-link:hover{
+    text-decoration:underline;   
+}
+.cust-bk{
+    background-image: url("../images/gggrain.svg");
+    background-size: cover;
+}
+.custom-text1{
+    font-size: x-large;
+    color: rgb(91, 89, 89);
+}
+.cust-top{
+    padding-top: 5%;
+}
+.com-img{
+    height: 50%;
+    width: 50%;
+}
+.custom-course-img{
+    height: 80%;
+    width: 80%;
+}
+#tutorials{
+    background-color:rgb(251, 242, 231)!important;
+}
+.rev-img-cust {
+    height: 75%;
+    width: 75%;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.custom-timer-img{
+    height: 207px;
+}
+.custom-bg{
+    background-color: #f0ffff!important;
+}
+.btn:hover{
+    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1)!important;
+}
+a:hover{
+    color: aquamarine;
+    cursor: pointer;
+}
+.footc{
+    background-color: black!important;
+}
+.footer-links{
+    text-decoration: none;
+    margin-inline: 2%;
+    color: inherit;
+    font-size:larger;
+}
+.blog-card:hover{
+    border: 2px solid #4c4c4c!important;
+}
+.blog-redirection-custom{
+    text-decoration: none!important;
+}
+.response{
+    width: 86%;
+    display: none;
+}
+
+/* New styles for stats section */
+.stats {
+    background-color: #007bff;
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.stats h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    display: block;
+    color: #007bff;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.image-container {
+    height: calc(100vh - 56px);
+    overflow: hidden;
+}
+
+.full-height-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.content-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .image-container {
+        height: 50vh;
+    }
+}
+
+/* New styles for scrolling testimonials */
+.testimonial-container {
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Bento grid for services */
+.bento-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.bento-item{
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    padding: 1.5rem;
+    background-image: none;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    min-height: 260px;
+}
+
+.bento-grid .bento-blue{ grid-column: 1 / span 1; grid-row: 1 / span 2; }
+.bento-grid .bento-red{ grid-column: 2 / span 1; grid-row: 1 / span 1; }
+.bento-grid .bento-yellow{ grid-column: 2 / span 1; grid-row: 2 / span 1; }
+
+.bento-blue{ grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+.bento-blue .bento-media{ grid-column: 1; grid-row: 1; margin-bottom: 1rem; }
+.bento-blue .bento-content{ grid-column: 1; grid-row: 2; }
+
+.bento-content p{ margin-bottom: 0.5rem; }
+.bento-media{ text-align: center; }
+.bento-media img{ max-height: 160px; width: auto; }
+
+.bento-red{ background-color: #e11d48; border: 3px solid #e11d48; color: #fff7ed; }
+.bento-blue{ background-color: #1e40af; border: 3px solid #1e40af; color: #eef2ff; }
+.bento-yellow{ background-color: #ca8a04; border: 3px solid #ca8a04; color: #fff8db; }
+
+.bento-item h3, .bento-item p { color: inherit; }
+.bento-item .btn { border: 2px solid rgba(255,255,255,0.9); color: #111; background-color: #fff; transition: transform .15s ease, background-color .15s ease, color .15s ease, border-color .15s ease; }
+.bento-item .btn:hover{ background-image: none!important; background-color: #111!important; color: #fff!important; border-color: #111!important; transform: translateY(-1px); }
+
+@media (max-width: 991px){
+    .bento-grid{ grid-template-columns: 1fr; }
+    .bento-grid .bento-blue,
+    .bento-grid .bento-red,
+    .bento-grid .bento-yellow{ grid-column: auto; grid-row: auto; }
+    .bento-item{ grid-template-columns: 1fr; text-align: left; }
+    .bento-media{ margin-top: 1rem; }
+    .bento-media img{ max-height: 140px; }
+}
+
+.testimonial-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    will-change: transform;
+    animation: testimonial-marquee 30s linear infinite;
+}
+
+.testimonial-container:hover .testimonial-track {
+    animation-play-state: paused;
+}
+
+@keyframes testimonial-marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.testimonial {
+    flex: 0 0 auto;
+    width: 300px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 1.5rem;
+    scroll-snap-align: start;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+    height: 370px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial.t-red { border-color: red; background-color: #ffe5e5; }
+.testimonial.t-blue { border-color: blue; background-color: #e6f0ff; }
+.testimonial.t-green { border-color: green; background-color: #e9fbea; }
+.testimonial.t-yellow { border-color: #e0c100; background-color: #fff9cc; }
+.testimonial.t-orange { border-color: orange; background-color: #ffefdd; }
+.testimonial.t-gray { border-color: #333; background-color: #f2f2f2; }
+.testimonial.t-violet { border-color: #7c3aed; background-color: #f3e8ff; }
+
+.testimonial p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-author img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+#reviews{
+    background-color: #F3F4F5 !important;
+}
+
+.edge-img{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+/* Contact page specific fixes */
+#contact {
+    min-height: calc(100vh - 72px - 60px); /* viewport height minus navbar and footer */
+}
+
+/* Sticky footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+footer.footc {
+    flex-shrink: 0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .custom-text {
+        font-size: 200%;
+    }
+    
+    .custom-text1 {
+        font-size: large;
+    }
+    
+    .com-img, .custom-course-img {
+        height: auto;
+        width: 100%;
+    }
+    
+    .testimonial-container {
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+    .testimonial-container::-webkit-scrollbar { display: none; }
+    .testimonial-track {
+        animation: none;
+        display: flex;
+        gap: 1rem;
+        width: max-content;
+        padding: 0 0.5rem;
+    }
+    .testimonial {
+        flex: 0 0 85vw;
+        width: auto;
+        height: auto;
+        overflow: visible;
+        scroll-snap-align: start;
+    }
+    .testimonial p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+    }
+}

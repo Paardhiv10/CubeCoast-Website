@@ -1,0 +1,153 @@
+/* Original CSS Styles */
+body::before {
+    display: block;
+    content: '';
+    height: 70px;
+}
+
+.symbol {
+    width: 40px;
+    height: 40px;
+}
+
+.custom-google-text {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+}
+
+.cust-bk {
+    background-image: url("../images/gggrain.svg");
+    background-size: cover;
+}
+
+.btn:hover {
+    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1) !important;
+}
+
+.footc {
+    background-color: black !important;
+}
+
+/* New Instructor Section Styles */
+.instructor-section {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    margin-top: 80px; /* Add top margin to clear the fixed navbar */
+}
+
+.instructor-card {
+    max-width: 360px;
+    margin: 0 auto;
+}
+
+.instructor-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.wca-link {
+    color: #0066cc;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wca-link:hover {
+    color: #004499;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .instructor-section {
+        min-height: auto;
+        padding: 2.25rem 1rem; /* reduce vertical padding and add horizontal padding for mobile */
+        margin-top: 80px; /* Ensure navbar clearance on mobile */
+    }
+    
+    .instructor-image {
+        height: auto;
+    }
+    
+    .display-4 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .lead {
+        font-size: 1.05rem !important;
+    }
+    
+    .text-content p:not(.lead) {
+        font-size: 0.975rem;
+    }
+    
+    .text-content {
+        padding: 0 0.5rem; /* Add padding to prevent text from touching edges */
+    }
+}
+
+@media (max-width: 576px) {
+    .instructor-image {
+        height: auto;
+    }
+    
+    .display-4 {
+        font-size: 1.85rem;
+        line-height: 1.2;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        margin-bottom: 1rem !important;
+    }
+    
+    .lead {
+        font-size: 1rem !important;
+    }
+    .text-content p:not(.lead) {
+        font-size: 0.95rem;
+    }
+    /* ensure space below fixed navbar on very small screens */
+    .instructor-section {
+        padding-top: 2.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin-top: 80px; /* Ensure navbar clearance on very small screens */
+    }
+    
+    .text-content {
+        padding: 0 0.25rem; /* Add minimal padding for very small screens */
+    }
+}
+
+/* Sticky footer for this page */
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper {
+    flex: 1 0 auto;
+}
+
+footer.footc {
+    margin-top: auto;
+}
+
+/* Ensure image fills card without inner overflow issues */
+.instructor-card .card {
+    overflow: hidden;
+    max-width: 360px;
+    margin: 0 auto;
+}

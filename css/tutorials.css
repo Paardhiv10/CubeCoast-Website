@@ -1,0 +1,304 @@
+/* Global Styles */
+.custom-google-text {
+    font-family: 'Marcellus', serif;
+    font-weight: bold;
+  }
+  
+  body {
+    padding-top: 76px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+  
+  /* Navbar Styles - Match other pages */
+  .symbol {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .navbar {
+    background-color: #f8f9fa !important;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+  
+  /* Hero Section */
+  .hero-section {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    padding: 80px 0 60px;
+    margin-bottom: 60px;
+  }
+  
+  .hero-section h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .hero-section .lead {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  /* Tutorials Section */
+  .tutorials-section {
+    padding: 40px 0 80px;
+  }
+  
+  .tutorial-card {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    padding: 40px;
+    margin-bottom: 50px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .tutorial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* Video Wrapper - Responsive iframe */
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+  }
+  
+  /* Tutorial Content */
+  .tutorial-content {
+    padding: 0 20px;
+  }
+  
+  .step-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .tutorial-content h2 {
+    font-size: 2rem;
+    color: #2d3748;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  .tutorial-content p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  
+  .tutorial-meta {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #718096;
+    font-size: 0.95rem;
+  }
+  
+  .tutorial-meta i {
+    margin-right: 5px;
+    color: #007bff;
+  }
+  
+  /* Call to Action Section */
+  .cta-section {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    padding: 80px 0;
+    margin-top: 40px;
+  }
+  
+  .cta-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .cta-section .lead {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.95;
+  }
+  
+  .cta-section .btn {
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    background-color: white;
+    color: #007bff;
+    border: none;
+  }
+  
+  .cta-section .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background-color: #f7fafc;
+  }
+  
+  /* Footer */
+  .footc {
+    margin-top: 0;
+  }
+  
+  /* Tablet Styles */
+  @media (max-width: 991px) {
+    .hero-section h1 {
+      font-size: 2.3rem;
+    }
+  
+    .hero-section .lead {
+      font-size: 1.1rem;
+    }
+  
+    .tutorial-card {
+      padding: 30px 25px;
+    }
+  
+    .tutorial-content {
+      padding: 20px 0 0 0;
+    }
+  
+    .tutorial-content h2 {
+      font-size: 1.7rem;
+    }
+  
+    .cta-section h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Mobile Styles */
+  @media (max-width: 767px) {
+    body {
+      padding-top: 70px;
+    }
+  
+    .hero-section {
+      padding: 50px 0 40px;
+      margin-bottom: 40px;
+    }
+  
+    .hero-section h1 {
+      font-size: 1.9rem;
+    }
+  
+    .hero-section .lead {
+      font-size: 1rem;
+      padding: 0 15px;
+    }
+  
+    .tutorials-section {
+      padding: 20px 0 50px;
+    }
+  
+    .tutorial-card {
+      padding: 25px 20px;
+      margin-bottom: 35px;
+    }
+  
+    .tutorial-content h2 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+  
+    .tutorial-content p {
+      font-size: 1rem;
+    }
+  
+    .step-badge {
+      font-size: 0.85rem;
+      padding: 6px 16px;
+    }
+  
+    .cta-section {
+      padding: 60px 0;
+    }
+  
+    .cta-section h2 {
+      font-size: 1.8rem;
+    }
+  
+    .cta-section .lead {
+      font-size: 1rem;
+      padding: 0 15px;
+    }
+  
+    .cta-section .btn {
+      padding: 12px 30px;
+      font-size: 1rem;
+    }
+  }
+  
+  /* Small Mobile Styles */
+  @media (max-width: 575px) {
+    .hero-section h1 {
+      font-size: 1.6rem;
+    }
+  
+    .tutorial-content h2 {
+      font-size: 1.3rem;
+    }
+  
+    .tutorial-card {
+      padding: 20px 15px;
+    }
+  
+    .video-wrapper {
+      border-radius: 8px;
+    }
+  
+    .cta-section h2 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Accessibility */
+  .btn:focus,
+  .navbar-toggler:focus {
+    outline: 3px solid #007bff;
+    outline-offset: 2px;
+  }
+  
+  /* Print Styles */
+  @media print {
+    .navbar,
+    .cta-section,
+    footer {
+      display: none;
+    }
+  
+    .tutorial-card {
+      page-break-inside: avoid;
+      box-shadow: none;
+      border: 1px solid #e2e8f0;
+    }
+  }
