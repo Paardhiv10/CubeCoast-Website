@@ -7,6 +7,9 @@ body::before{
     font-family: 'Marcellus', serif;
     font-weight: bold;
 }
+.btn:hover{
+    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1)!important;
+}
 .card:hover{
     box-shadow: rgba(110, 224, 226, 0.25) 0px 14px 28px, rgba(65, 183, 163, 0.22) 0px 10px 10px;
 }

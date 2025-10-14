@@ -164,9 +164,17 @@
     background-color: #f7fafc;
   }
   
+  .btn:hover{
+    background-image: linear-gradient(to right top, #64ddd5, #2bd3e1, #00c6ed, #00b8f7, #00a8fa, #00aafc, #00acfd, #00aeff, #00c4ff, #00d8ff, #01eafa, #5ffbf1)!important;
+  }
+
   /* Footer */
   .footc {
     margin-top: 0;
+  }
+
+  .footc{
+    background-color: black!important;
   }
   
   /* Tablet Styles */
