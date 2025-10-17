@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Netlify
+.netlify/
+
+# Environment variables
+.env
+.env.local
+
+# Firebase service account (NEVER COMMIT THIS!)
+*service-account*.json
+firebase-adminsdk*.json
+cubecoast-contact-form-*.json
+
+# OS files
+.DS_Store
+Thumbs.db
