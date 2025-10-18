@@ -1,25 +1,21 @@
-/* Heights (adjust these if your exact banner/nav heights differ) */
 :root{
-    --nav-h: 72px;     /* your navbar height */
-    --banner-h: 48px;  /* your blue banner height on desktop */
+    --nav-h: 72px;    
+    --banner-h: 48px; 
 }
 
-/* 1) Remove any global "body spacer" hack */
 body::before{
     content: none !important;
     display: none !important;
 }
 
-/* 2) Navbar is fixed and sits flush to the very top by default */
 .navbar.fixed-top{
     position: fixed;
-    top: 0;           /* no global push-down */
+    top: 0;         
     left: 0;
     right: 0;
     z-index: 1000;
 }
 
-/* 3) Content offset so nothing slides under the fixed navbar on all pages */
 main,
 .main,
 .page,
@@ -28,10 +24,8 @@ main,
     padding-top: var(--nav-h, 72px);
 }
 
-/* 4) Desktop: ONLY if a banner exists above the navbar, offset the navbar
-        by the banner height and increase the content offset accordingly */
+
 @media (min-width: 769px){
-    /* If markup is: .blue-banner + .navbar + main ... */
     .blue-banner + .navbar.fixed-top{
     top: var(--banner-h, 48px);
     }
@@ -44,11 +38,9 @@ main,
     }
 }
 
-/* 5) Mobile: hide the banner and keep the navbar at the very top with
-        a consistent content offset equal to the navbar height only */
+
 @media (max-width: 768px){
     .blue-banner{ display: none; }
-    /* Ensure no offset on mobile even if the banner exists in markup */
     .blue-banner + .navbar.fixed-top{ top: 0; }
     .blue-banner + .navbar.fixed-top ~ main,
     .blue-banner + .navbar.fixed-top ~ .main,
@@ -57,17 +49,14 @@ main,
     .blue-banner + .navbar.fixed-top ~ .page-content{
     padding-top: var(--nav-h, 72px);
     }
-    /* Optional: your existing banner text tweaks can remain */
     .banner-text{ font-size: 14px; }
 }
 
-/* 6) Clean up any stray top margins that may create phantom gaps */
 header.navbar,
 .navbar{
     margin-top: 0;
 }
 
-/* Blue Banner Styles */
 .blue-banner {
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
@@ -363,6 +352,20 @@ a:hover{
     .bento-item{ grid-template-columns: 1fr; text-align: left; }
     .bento-media{ margin-top: 1rem; }
     .bento-media img{ max-height: 140px; }
+}
+
+.testimonial .card-text.lead {
+    font-size: 0.95 rem; 
+    font-weight: 400;    
+    line-height: 1.6;    
+    color: #212529;     
+    word-wrap: break-word; 
+}
+
+.testimonial .testimonial-author p {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #333;
 }
 
 .testimonial-track {
