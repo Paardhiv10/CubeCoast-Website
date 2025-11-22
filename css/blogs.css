@@ -58,6 +58,10 @@ footer {
     margin-top: 3rem;
 }
 
+.footc{
+    background-color: black!important;
+}
+
 @media (max-width: 768px) {
     .blog-content h1 {
         font-size: 2rem;
