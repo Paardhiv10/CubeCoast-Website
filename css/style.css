@@ -232,46 +232,134 @@ a:hover{
 
 /* New styles for stats section */
 .stats {
+    --wave-h: 13px;            /* wave depth */
+    --wave-tile: 32px;         /* wave width — tight, small scallops */
+    position: relative;
+    z-index: 1;
+    /* Pull up so the top wave overlaps the hero — no white gap in the valleys */
+    margin-top: calc(-1 * var(--wave-h));
     background-color: #007bff;
     color: white;
-    padding: 3rem 2rem;
+    padding: calc(3rem + var(--wave-h)) 2rem calc(3rem + var(--wave-h));
     text-align: center;
+    /* Wide, shallow scalloped wave edges on top and bottom */
+    -webkit-mask:
+        radial-gradient(calc(var(--wave-tile) / 2) var(--wave-h) at 50% 100%, #000 98%, #0000 100%) 0 0 / var(--wave-tile) var(--wave-h) repeat-x,
+        radial-gradient(calc(var(--wave-tile) / 2) var(--wave-h) at 50% 0, #000 98%, #0000 100%) 0 100% / var(--wave-tile) var(--wave-h) repeat-x,
+        linear-gradient(#000 0 0) 50% 50% / 100% calc(100% - 2 * var(--wave-h)) no-repeat;
+    -webkit-mask-repeat: repeat-x, repeat-x, no-repeat;
+    mask:
+        radial-gradient(calc(var(--wave-tile) / 2) var(--wave-h) at 50% 100%, #000 98%, #0000 100%) 0 0 / var(--wave-tile) var(--wave-h) repeat-x,
+        radial-gradient(calc(var(--wave-tile) / 2) var(--wave-h) at 50% 0, #000 98%, #0000 100%) 0 100% / var(--wave-tile) var(--wave-h) repeat-x,
+        linear-gradient(#000 0 0) 50% 50% / 100% calc(100% - 2 * var(--wave-h)) no-repeat;
+    mask-repeat: repeat-x, repeat-x, no-repeat;
 }
 
 .stats h2 {
     font-size: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.25rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
 }
 
 .stat-container {
     display: flex;
     justify-content: center;
-    gap: 2rem;
+    gap: 1.75rem;
     padding: 0 2rem;
     flex-wrap: wrap;
 }
 
 .stat-item {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 2rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 220px;
+    position: relative;
+    background: linear-gradient(160deg, #ffffff 0%, #eef1ff 100%);
+    border-radius: 20px;
+    padding: 2.25rem 1.5rem 1.75rem;
+    box-shadow: 0 14px 34px rgba(10, 16, 80, 0.28);
+    width: 232px;
     text-align: center;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Coloured accent bar across the top of each card */
+.stat-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--accent-grad);
+}
+
+/* Soft radial glow decoration in the corner */
+.stat-item::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--accent-soft);
+    opacity: 0.6;
+    z-index: 0;
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 22px 46px rgba(10, 16, 80, 0.38);
+}
+
+.stat-item > * {
+    position: relative;
+    z-index: 1;
+}
+
+.stat-icon {
+    display: grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    margin: 0 auto 0.9rem;
+    border-radius: 16px;
+    font-size: 1.8rem;
+    line-height: 1;
+    background: var(--accent-soft);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+    transform: rotate(-6deg);
+    transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+    transform: rotate(0deg) scale(1.05);
 }
 
 .stat-number {
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 800;
     display: block;
-    color: #007bff;
+    line-height: 1;
+    background: var(--accent-grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: var(--accent);
 }
 
 .stat-label {
-    font-size: 1.1rem;
-    color: #333;
-    margin-top: 10px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #3a3f5a;
+    margin-top: 12px;
 }
+
+/* Per-card accent colour palette */
+.stat-item:nth-child(1) { --accent: #6366f1; --accent-soft: #e0e7ff; --accent-grad: linear-gradient(135deg, #6366f1, #8b5cf6); }
+.stat-item:nth-child(2) { --accent: #ec4899; --accent-soft: #fce7f3; --accent-grad: linear-gradient(135deg, #ec4899, #f43f5e); }
+.stat-item:nth-child(3) { --accent: #0d9488; --accent-soft: #ccfbf1; --accent-grad: linear-gradient(135deg, #14b8a6, #22c55e); }
+.stat-item:nth-child(4) { --accent: #d97706; --accent-soft: #fef3c7; --accent-grad: linear-gradient(135deg, #f59e0b, #f97316); }
 
 .image-container {
     height: calc(100vh - 56px);
@@ -301,6 +389,9 @@ a:hover{
     overflow: hidden;
     position: relative;
     padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 /* Bento grid for services */
@@ -355,17 +446,17 @@ a:hover{
 }
 
 .testimonial .card-text.lead {
-    font-size: 0.95 rem; 
-    font-weight: 400;    
-    line-height: 1.6;    
-    color: #212529;     
-    word-wrap: break-word; 
+    font-size: 0.95 rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--t-text, #212529);
+    word-wrap: break-word;
 }
 
 .testimonial .testimonial-author p {
     font-size: 0.95rem;
-    font-weight: 400;
-    color: #333;
+    font-weight: 600;
+    color: var(--t-text, #333);
 }
 
 .testimonial-track {
@@ -373,7 +464,12 @@ a:hover{
     gap: 1rem;
     width: max-content;
     will-change: transform;
-    animation: testimonial-marquee 30s linear infinite;
+    animation: testimonial-marquee 40s linear infinite;
+}
+
+/* Second row scrolls in the opposite direction */
+.testimonial-track--rtl {
+    animation-direction: reverse;
 }
 
 .testimonial-container:hover .testimonial-track {
@@ -388,13 +484,14 @@ a:hover{
 .testimonial {
     flex: 0 0 auto;
     width: 300px;
-    background-color: #f8f8f8;
-    border-radius: 10px;
+    background-color: var(--t-bg, #f8f8f8);
+    color: var(--t-text, #212529);
+    border-radius: 16px;
     padding: 1.5rem;
     scroll-snap-align: start;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    border: 2px solid transparent;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+    border: 1.5px solid var(--t-border, rgba(0, 0, 0, 0.08));
     height: 370px;
     overflow: hidden;
     display: flex;
@@ -403,17 +500,38 @@ a:hover{
 }
 
 .testimonial:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    background-color: var(--t-solid);
+    border-color: var(--t-solid);
+    box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
 }
 
-.testimonial.t-red { border-color: red; background-color: #ffe5e5; }
-.testimonial.t-blue { border-color: blue; background-color: #e6f0ff; }
-.testimonial.t-green { border-color: green; background-color: #e9fbea; }
-.testimonial.t-yellow { border-color: #e0c100; background-color: #fff9cc; }
-.testimonial.t-orange { border-color: orange; background-color: #ffefdd; }
-.testimonial.t-teal { border-color: #14b8a6; background-color: #e0f7f4; } 
-.testimonial.t-violet { border-color: #7c3aed; background-color: #f3e8ff; }
-.testimonial.t-pink { border-color: #ec4899; background-color: #ffe4f1; } 
+/* Text turns light when the card fills with its colour on hover */
+.testimonial:hover,
+.testimonial:hover .card-text,
+.testimonial:hover .card-text.lead,
+.testimonial:hover .testimonial-author p,
+.testimonial:hover p,
+.testimonial:hover .bi {
+    color: #fff !important;
+}
+
+.testimonial:hover hr {
+    border-top-color: rgba(255, 255, 255, 0.55);
+    opacity: 0.9;
+}
+
+/* Per colour: --t-bg pale fill · --t-text dark readable text · --t-solid saturated hover fill · --t-border soft same-hue border */
+.testimonial.t-red    { --t-bg: #ffe5e5; --t-text: #b91c1c; --t-solid: #ef4444; --t-border: #f6b6b6; }
+.testimonial.t-blue   { --t-bg: #e6f0ff; --t-text: #1d4ed8; --t-solid: #2563eb; --t-border: #b9d1f7; }
+.testimonial.t-green  { --t-bg: #e9fbea; --t-text: #15803d; --t-solid: #22a34a; --t-border: #b6e7bf; }
+.testimonial.t-yellow { --t-bg: #fff7cc; --t-text: #a16207; --t-solid: #ca8a04; --t-border: #ecd88a; }
+.testimonial.t-orange { --t-bg: #ffefdd; --t-text: #c2410c; --t-solid: #f97316; --t-border: #f8cfa3; }
+.testimonial.t-teal   { --t-bg: #e0f7f4; --t-text: #0f766e; --t-solid: #0d9488; --t-border: #a7e2da; }
+.testimonial.t-violet { --t-bg: #f3e8ff; --t-text: #6d28d9; --t-solid: #7c3aed; --t-border: #d7bcf5; }
+.testimonial.t-pink   { --t-bg: #ffe4f1; --t-text: #be185d; --t-solid: #ec4899; --t-border: #f5b6d3; }
+.testimonial.t-indigo { --t-bg: #eaeafe; --t-text: #4338ca; --t-solid: #4f46e5; --t-border: #bcbcf5; }
+.testimonial.t-cyan   { --t-bg: #dcfaff; --t-text: #0e7490; --t-solid: #0891b2; --t-border: #a6e5f2; }
 
 .testimonial p {
     font-style: italic;
@@ -483,27 +601,26 @@ footer.footc {
     }
     
     .testimonial-container {
-        overflow-x: auto;
-        overflow-y: visible;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        -ms-overflow-style: none;
+        overflow: hidden;
     }
     .testimonial-container::-webkit-scrollbar { display: none; }
     .testimonial-track {
-        animation: none;
         display: flex;
         gap: 1rem;
         width: max-content;
-        padding: 0 0.5rem;
+        align-items: stretch;
     }
     .testimonial {
-        flex: 0 0 85vw;
+        flex: 0 0 78vw;
+        max-width: 340px;
         width: auto;
         height: auto;
         overflow: visible;
-        scroll-snap-align: start;
+    }
+    .testimonial .card-text.lead {
+        overflow: visible;
+        text-overflow: clip;
+        display: block;
     }
     .testimonial p {
         font-size: 0.95rem;

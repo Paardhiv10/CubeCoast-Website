@@ -38,25 +38,33 @@ document.addEventListener("DOMContentLoaded", () => {
    let statsVisible = false;
 
    function animateNumbers() {
-       const maxTarget = Math.max(...Array.from(statNumbers).map(stat => +stat.getAttribute("data-target")));
-       const speed = Math.ceil(maxTarget / 200); // Adjust the counter speed for the largest number
+       const DURATION = 2000; // ms — every counter runs for the same length of time
+       let startTime = null;
 
-       statNumbers.forEach((stat) => {
-           const target = +stat.getAttribute("data-target");
-           let current = 0;
+       const step = (timestamp) => {
+           if (startTime === null) startTime = timestamp;
+           const progress = Math.min((timestamp - startTime) / DURATION, 1);
+           // Ease-out so all numbers glide to their target together
+           const eased = 1 - Math.pow(1 - progress, 3);
 
-           const increment = Math.ceil(target / (maxTarget / speed)); // Dynamically calculate the increment based on the largest number
+           statNumbers.forEach((stat) => {
+               const target = +stat.getAttribute("data-target");
+               const current = Math.round(target * eased);
+               stat.textContent = current.toLocaleString();
+           });
 
-           const updateNumber = () => {
-               current += increment;
-               if (current > target) current = target;
-               stat.textContent = current.toLocaleString(); // Format numbers with commas
-               if (current < target) requestAnimationFrame(updateNumber);
-               else stat.textContent += "+"; // Append the "+" sign once the number is finished
-           };
+           if (progress < 1) {
+               requestAnimationFrame(step);
+           } else {
+               // Lock every counter to its final value + "+" at the same moment
+               statNumbers.forEach((stat) => {
+                   const target = +stat.getAttribute("data-target");
+                   stat.textContent = target.toLocaleString() + "+";
+               });
+           }
+       };
 
-           updateNumber();
-       });
+       requestAnimationFrame(step);
    }
 
    function checkVisibility() {
