@@ -235,14 +235,14 @@ a:hover{
     --wave-h: 13px;            /* wave depth */
     --wave-tile: 32px;         /* wave width — tight, small scallops */
     position: relative;
-    z-index: 1;
+    z-index: 5; /* paint above the hero image's edge feather (z-index 2) so the wave stays solid */
     /* Pull up so the top wave overlaps the hero — no white gap in the valleys */
     margin-top: calc(-1 * var(--wave-h));
     background-color: #007bff;
     color: white;
     padding: calc(3rem + var(--wave-h)) 2rem calc(3rem + var(--wave-h));
     text-align: center;
-    /* Wide, shallow scalloped wave edges on top and bottom */
+    /* Tight scalloped wave edges on top and bottom */
     -webkit-mask:
         radial-gradient(calc(var(--wave-tile) / 2) var(--wave-h) at 50% 100%, #000 98%, #0000 100%) 0 0 / var(--wave-tile) var(--wave-h) repeat-x,
         radial-gradient(calc(var(--wave-tile) / 2) var(--wave-h) at 50% 0, #000 98%, #0000 100%) 0 100% / var(--wave-tile) var(--wave-h) repeat-x,
@@ -378,9 +378,145 @@ a:hover{
     margin: 0 auto;
 }
 
+/* ---------- Hero refinements ---------- */
+.hero-eyebrow {
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #0069d9;
+    background: rgba(0, 123, 255, 0.10);
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    margin-bottom: 1.1rem;
+}
+
+.hero-title {
+    line-height: 1.12;
+    margin-bottom: 0;
+}
+
+.hero-accent {
+    color: #007bff;
+}
+
+.hero-subtitle {
+    max-width: 30rem;
+    line-height: 1.55;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    font-weight: 600;
+    border-radius: 10px;
+    border-width: 2px;
+}
+
+.hero-btn-secondary {
+    background-color: transparent;
+}
+
+/* Minimal stat grid in the hero — figures split by thin dividers */
+.hero-stats {
+    display: flex;
+    align-items: stretch;
+    flex-wrap: wrap;
+    max-width: 30rem;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.hero-stat {
+    padding: 0 1.6rem;
+    border-left: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.hero-stat:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.hero-stat-figure {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.25rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #1f2430;
+    letter-spacing: -0.01em;
+}
+
+.hero-stat-rating {
+    color: #2563ff;
+}
+
+.hero-stat-rating .bi {
+    color: #2563ff;
+    font-size: 0.68em;
+    transform: translateY(-0.06em);
+}
+
+.hero-stat-label {
+    display: block;
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+/* Soften the hard seam between the text column and the photo */
+.hero-image-container {
+    position: relative;
+}
+
+.hero-image-container::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 10%;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(243, 238, 237, 0.7) 0%, rgba(243, 238, 237, 0) 100%);
+}
+
 @media (max-width: 767px) {
     .image-container {
         height: 50vh;
+    }
+    /* Feather only makes sense side-by-side; hide it once the columns stack */
+    .hero-image-container::before {
+        display: none;
+    }
+    .hero-cta .hero-btn {
+        flex: 1 1 auto;
+        justify-content: center;
+    }
+    /* Keep the eyebrow pill compact so it doesn't wrap awkwardly */
+    .hero-eyebrow {
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
+        line-height: 1.4;
+        padding: 0.35rem 0.8rem;
+    }
+    /* Mobile: keep two stats side by side, drop the WCA competitors one */
+    .hero-stats {
+        max-width: 100%;
+        margin-top: 1.5rem;
+        flex-wrap: nowrap;
+    }
+    .hero-stat:nth-child(2) {
+        display: none;
+    }
+    .hero-stat {
+        padding: 0 1.25rem;
+    }
+    .hero-stat:first-child {
+        padding-left: 0;
     }
 }
 
